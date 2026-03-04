@@ -10,8 +10,8 @@
 import math
 
 def diff(x,y):
-    return (math.exp(x)+2*math.exp(y))**0.5 # example differential equation for dy/dx = sqrt(e^x + 2e^y)
-    # return(x**2 + y**2)
+    # return (math.exp(x)+2*math.exp(y))**0.5 # example differential equation for dy/dx = sqrt(e^x + 2e^y)
+    return (math.log(x) + 3*y)
     
 
 
