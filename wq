@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 0,
    "id": "0bb0b275",
    "metadata": {
     "collapsed": false,
@@ -22,7 +22,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 56,
    "id": "93ef62c4",
    "metadata": {
     "collapsed": false,
@@ -38,7 +38,7 @@
        "5"
       ]
      },
-     "execution_count": 5,
+     "execution_count": 56,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -49,7 +49,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 49,
    "id": "80cfc3dd",
    "metadata": {
     "collapsed": false,
@@ -69,7 +69,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 50,
    "id": "aabd1af7",
    "metadata": {
     "collapsed": false,
@@ -85,7 +85,7 @@
        "(1.5, 2.0)"
       ]
      },
-     "execution_count": 8,
+     "execution_count": 50,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -96,7 +96,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 63,
    "id": "55398e36",
    "metadata": {
     "collapsed": false,
@@ -105,7 +105,18 @@
      "source_hidden": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "ename": "IndentationError",
+     "evalue": "unexpected indent (<input_63>, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "  File \u001b[38;5;38m\"<input_63>\"\u001b[39m, line \u001b[38;5;75m1\u001b[39m",
+      "    \u001b[38;5;70;01mfrom\u001b[39;00m \u001b[38;5;75;04mstring\u001b[39;00m \u001b[38;5;70;01mimport\u001b[39;00m Template",
+      "\u001b[38;5;1mIndentationError\u001b[39m: unexpected indent"
+     ]
+    }
+   ],
    "source": [
     "from string import Template\n",
     "table = Template(\" | n = $n | x_$n = $x | y_$n = $y | dy/dx_$n = $f | \")\n",
@@ -122,20 +133,18 @@
     "    print(f'''\n",
     "Parameters:\n",
     "    dy/dx = {ex}\n",
-    "    {table.substitute(n=0, x=x_0, y=y_0, f= dydx_0)}\n",
+    "    {table.substitue()}\n",
     "    ''')\n",
     "  \n",
     "\n",
     "    \n",
     "    print('Solving for y_1 via Eulers method...')\n",
-    "    x_1, y_1 = euler(x_0, y_0, step)\n",
-    "    print(table.substitute(n=1, x = x_1, y = y_1, f= diff(x_1, y_1) ))\n",
     "    "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 59,
    "id": "97a6287b",
    "metadata": {
     "collapsed": false,
@@ -152,7 +161,7 @@
       "\n",
       "Parameters:\n",
       "    dy/dx = x**2 + y**2\n",
-      "     | n = 0 | x_0 = 1 | y_0 = 1 | dy/dx_0 = 2 | \n"
+      "    x_0 = 1 | y_0 = 1 | dy/dx_0 = 2\n"
      ]
     },
     {
@@ -168,22 +177,15 @@
      "text": [
       "Solving for y_1 via Eulers method...\n"
      ]
-    },
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      " | n = 1 | x_1 = 2 | y_1 = 3.0 | dy/dx_1 = 13.0 | \n"
-     ]
     }
    ],
    "source": [
-    "solve(1,1,1, step=1)"
+    "solve(1,1,1)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 1,
    "id": "9391f2e2",
    "metadata": {
     "collapsed": false,
@@ -201,12 +203,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": null,
    "id": "2e8bf0da",
    "metadata": {
-    "collapsed": false,
     "jupyter": {
-     "outputs_hidden": false,
      "source_hidden": false
     }
    },
